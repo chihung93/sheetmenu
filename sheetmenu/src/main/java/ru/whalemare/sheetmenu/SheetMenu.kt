@@ -34,7 +34,7 @@ import ru.whalemare.sheetmenu.layout.LinearLayoutProvider
  * @param click listener for menu items
  */
 open class SheetMenu(
-        private val title: String? = null,
+        private val title: CharSequence? = null,
         private val actions: List<ActionItem> = emptyList(),
         private val onClick: ((ActionItem) -> Unit)? = null,
         private val onCancel: (() -> Unit)? = null,
@@ -45,7 +45,7 @@ open class SheetMenu(
     var dialog: BottomSheetDialog? = null
     private var dialogLifecycleObserver: DialogLifecycleObserver? = null
 
-    constructor(title: String? = null,
+    constructor(title: CharSequence? = null,
                 actions: Iterable<String> = emptyList(),
                 onClick: ((ActionItem) -> Unit)? = null,
                 onCancel: (() -> Unit)? = null,
@@ -54,7 +54,7 @@ open class SheetMenu(
 
     constructor(context: Context,
                 @MenuRes menu: Int,
-                title: String? = null,
+                title: CharSequence? = null,
                 onClick: ((ActionItem) -> Unit)? = null,
                 onCancel: (() -> Unit)? = null,
                 layoutProvider: LayoutProvider = LinearLayoutProvider(),
